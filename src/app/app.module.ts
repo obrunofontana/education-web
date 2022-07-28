@@ -10,6 +10,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { RoomComponent } from './components/room/room.component';
 import { LessonComponent } from './components/lesson/lesson.component';
 
+import { VimeModule } from '@vime/angular';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,8 @@ import { LessonComponent } from './components/lesson/lesson.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    VimeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

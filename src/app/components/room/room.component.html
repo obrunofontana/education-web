@@ -1,3 +1,19 @@
-<div class="flex flex-grow-1">
-  room
+<div class="d-flex flex-grow-1">
+  <div class="d-flex justify-center">
+    <div class="container-video h-100 w-100">
+      <!-- By default there are no controls so let's turn them on. -->
+      <vm-player controls>
+        <vm-video cross-origin="true" poster="https://media.vimejs.com/poster.png">
+          <source data-src="https://media.vimejs.com/720p.mp4" type="video/mp4" />
+          <track
+          default
+          kind="subtitles"
+          src="https://media.vimejs.com/subs/english.vtt"
+          srclang="en"
+          label="English"
+          />
+        </vm-video>
+      </vm-player>
+    </div>
+  </div>
 </div>
