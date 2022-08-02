@@ -7,12 +7,10 @@ import { LessonType } from 'src/app/course.service';
   styleUrls: ['./room.component.css']
 })
 export class RoomComponent implements OnInit {
-  @Input () lessons: LessonType[] | null = null;
-
   constructor() {}
 
   ngOnInit(): void {
-    console.log('log no componente room', this.lessons);
+    console.log('log no componente room');
   }
 
 }
