@@ -3,9 +3,18 @@
 
   <main class="d-flex">
     <app-room
+      *ngIf="lessonToShow; else welcomeToCourse"
       [lessonParam]="lessonToShow"
       class="flex-grow-1">
     </app-room>
+
+    <ng-template #welcomeToCourse>
+      <div class="d-flex flex-grow-1 justify-content-center align-items-center">
+        <h1>
+          Bem vindo ao curso!
+        </h1>
+      </div>
+    </ng-template>
 
     <app-sidebar
       (populateLessonEvent)="setLessonToShow($event)"
