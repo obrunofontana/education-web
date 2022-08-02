@@ -2,7 +2,14 @@
   <app-header></app-header>
 
   <main class="d-flex">
-    <app-room class="flex-grow-1"></app-room>
-    <app-sidebar [lessons]="course.lessons"></app-sidebar>
+    <app-room
+      [lessonParam]="lessonToShow"
+      class="flex-grow-1">
+    </app-room>
+
+    <app-sidebar
+      (populateLessonEvent)="setLessonToShow($event)"
+      [lessons]="course.lessons">
+    </app-sidebar>
   </main>
 </div>

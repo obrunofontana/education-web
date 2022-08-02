@@ -1,4 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
 import { LessonResponseType, LessonService } from 'src/app/lesson.service';
 
 @Component({
@@ -6,7 +12,10 @@ import { LessonResponseType, LessonService } from 'src/app/lesson.service';
   templateUrl: './lesson.component.html',
   styleUrls: ['./lesson.component.css']
 })
+
 export class LessonComponent implements OnInit {
+  @Output () getLessonEvent: EventEmitter<any> =
+    new EventEmitter();
   @Input () lessonId?: number;
   @Input () title?: string;
 
@@ -23,6 +32,7 @@ export class LessonComponent implements OnInit {
 
   async onClickLesson (id: any) {
     this.lesson = await this.lessonService.getLessonById(id);
+    this.getLessonEvent.emit(this.lesson);
   }
 
 }

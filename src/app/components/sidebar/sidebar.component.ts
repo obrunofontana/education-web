@@ -1,4 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
 import { LessonType } from 'src/app/course.service';
 
 @Component({
@@ -7,6 +13,8 @@ import { LessonType } from 'src/app/course.service';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
+  @Output () populateLessonEvent: EventEmitter<any> =
+    new EventEmitter()
   @Input () lessons: LessonType[] | null = null;
 
   constructor() { }
@@ -14,4 +22,7 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  populateLesson(lesson: any) {
+    this.populateLessonEvent.emit(lesson);
+  }
 }
