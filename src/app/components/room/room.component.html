@@ -2,19 +2,10 @@
   <div class="d-flex justify-content-center">
     <div class="h-100 w-100 container-video">
       <vm-player controls>
-        <vm-video
-          cross-origin="true">
-          <source data-src="https://media.vimejs.com/720p.mp4"
-            type="video/mp4"
-          />
-          <track
-          default
-          kind="subtitles"
-          src="https://media.vimejs.com/subs/english.vtt"
-          srclang="en"
-          label="English"
-          />
-        </vm-video>
+        <vm-youtube
+          cookies="true"
+          videoId={{lessonParam?.videoId}}>
+        </vm-youtube>
       </vm-player>
     </div>
   </div>
