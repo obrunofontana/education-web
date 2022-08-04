@@ -13,6 +13,8 @@ import { LessonComponent } from './components/lesson/lesson.component';
 import { VimeModule } from '@vime/angular';
 import { HomeComponent } from './pages/home/home.component';
 import { CardComponent } from './components/card/card.component';
+import { PlayerComponent } from './components/player/player.component';
+import { SafePipe } from './safe.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { CardComponent } from './components/card/card.component';
     RoomComponent,
     LessonComponent,
     HomeComponent,
-    CardComponent
+    CardComponent,
+    PlayerComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
