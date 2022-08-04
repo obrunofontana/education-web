@@ -4,10 +4,17 @@
   </span>
 
   <div class="d-flex flex-column gap-4">
-    <app-lesson
-      (getLessonEvent)="populateLesson($event)"
-      [lessonId]="lesson.id"
-      [title]="lesson.title"
-      *ngFor="let lesson of lessons"></app-lesson>
+
+    <div *ngIf="lessons; else notFoundLessons">
+      <app-lesson
+        (getLessonEvent)="populateLesson($event)"
+        [lessonId]="lesson.id"
+        [title]="lesson.title"
+        *ngFor="let lesson of lessons"></app-lesson>
+    </div>
+
+    <ng-template #notFoundLessons>
+      <h2 class="text-center" >Nenhuma aula encontrada!</h2>
+    </ng-template>
   </div>
 </aside>

@@ -12,13 +12,21 @@ export class CourseComponent implements OnInit {
   course: CourseResponseType;
   lessonToShow: any;
 
-  constructor(courseService: CourseService, private route: ActivatedRoute) {
+  constructor(
+    courseService: CourseService,
+    private route: ActivatedRoute
+  ) {
     this.courseService = courseService;
     this.course = {} as CourseResponseType;
   }
 
   async ngOnInit(): Promise<void> {
-    this.course = await this.courseService.getCourseById(2);
+    const params = this.route.snapshot.params;
+    const courseId = params['courseId'];
+
+    this.course =
+      await this.courseService
+        .getCourseById(Number(courseId));
   }
 
   async setLessonToShow(lesson: any) {
