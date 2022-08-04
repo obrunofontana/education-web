@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { CourseResponseType, CourseService } from 'src/app/course.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class CourseComponent implements OnInit {
   course: CourseResponseType;
   lessonToShow: any;
 
-  constructor(courseService: CourseService) {
+  constructor(courseService: CourseService, private route: ActivatedRoute) {
     this.courseService = courseService;
     this.course = {} as CourseResponseType;
   }

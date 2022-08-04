@@ -12,6 +12,7 @@ import { LessonComponent } from './components/lesson/lesson.component';
 
 import { VimeModule } from '@vime/angular';
 import { HomeComponent } from './pages/home/home.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HomeComponent } from './pages/home/home.component';
     SidebarComponent,
     RoomComponent,
     LessonComponent,
-    HomeComponent
+    HomeComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,18 @@
-<p>home works!</p>
+
+<app-header></app-header>
+<div class="container pt-5">
+  <header>
+    <h1>Bem vindo ao new dev, sua plataforma online para elevar seu conhecimento!</h1>
+  </header>
+  <main>
+    <div class="row">
+      <app-card
+        [titleParam]="course.title"
+        [descriptionParam]="course.description"
+        class="col-6 my-4"
+        *ngFor="let course of courses"
+      >
+      </app-card>
+    </div>
+  </main>
+</div>

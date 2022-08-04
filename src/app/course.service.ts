@@ -7,6 +7,12 @@ export type LessonType = {
   description: string;
 }
 
+export type CourseType = {
+  id: number;
+  title: string;
+  description: string;
+}
+
 export type CourseResponseType = {
   title: string;
   description: string;
@@ -26,6 +32,15 @@ export class CourseService {
       fetch(`https://bf-newdev.herokuapp.com/courses/${id}`);
 
     const data = await response.json() as CourseResponseType;
+
+    return data;
+  }
+
+  async getCourses(): Promise<CourseType[]> {
+    const response = await
+    fetch(`https://bf-newdev.herokuapp.com/courses`);
+
+    const data = await response.json() as CourseType[];
 
     return data;
   }
